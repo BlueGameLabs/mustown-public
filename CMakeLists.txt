@@ -1,42 +1,81 @@
-cmake_minimum_required(VERSION 3.11) # FetchContent is available in 3.11+
+cmake_minimum_required(VERSION 3.11)
 project(mustown)
 
 # Generate compile_commands.json
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Dependencies
+
+# raylib
 set(RAYLIB_VERSION 6.0)
-find_package(raylib ${RAYLIB_VERSION} QUIET) # QUIET or REQUIRED
-if (NOT raylib_FOUND) # If there's none, fetch and build raylib
-  include(FetchContent)
-  FetchContent_Declare(
-    raylib
-    DOWNLOAD_EXTRACT_TIMESTAMP OFF
-    URL https://github.com/raysan5/raylib/archive/refs/tags/${RAYLIB_VERSION}.tar.gz
-  )
-  FetchContent_GetProperties(raylib)
-  if (NOT raylib_POPULATED) # Have we downloaded raylib yet?
-    set(FETCHCONTENT_QUIET NO)
-    FetchContent_MakeAvailable(raylib)
-  endif()
+find_package(raylib ${RAYLIB_VERSION} QUIET)
+
+if (NOT raylib_FOUND)
+include(FetchContent)
+FetchContent_Declare(
+raylib
+DOWNLOAD_EXTRACT_TIMESTAMP OFF
+URL https://github.com/raysan5/raylib/archive/refs/tags/${RAYLIB_VERSION}.tar.gz
+)
+FetchContent_GetProperties(raylib)
+if (NOT raylib_POPULATED)
+set(FETCHCONTENT_QUIET NO)
+FetchContent_MakeAvailable(raylib)
+endif()
+endif()
+
+# spdlog
+set(SPDLOG_VERSION 1.15.3)
+find_package(spdlog ${SPDLOG_VERSION} QUIET)
+
+if (NOT spdlog_FOUND)
+include(FetchContent)
+FetchContent_Declare(
+spdlog
+DOWNLOAD_EXTRACT_TIMESTAMP OFF
+URL https://github.com/gabime/spdlog/archive/refs/tags/v${SPDLOG_VERSION}.tar.gz
+)
+FetchContent_MakeAvailable(spdlog)
 endif()
 
 # Our Project
+add_executable(${PROJECT_NAME} main.cpp
+        renderer/renderer.h
+        renderer/SpriteRenderer.cpp
+        renderer/SpriteRenderer.h
+        renderer/atlas/TextureAtlas.cpp
+        renderer/atlas/TextureAtlas.h
+        renderer/atlas/AtlasRegion.cpp
+        renderer/atlas/AtlasRegion.h
+        renderer/RenderDevice.h
+        renderer/backends/RaylibRenderDevice.cpp
+        renderer/backends/RaylibRenderDevice.h
+        renderer/animation/Animation.cpp
+        renderer/animation/Animation.h
+        renderer/animation/AnimationController.cpp
+        renderer/animation/AnimationController.h)
 
-add_executable(${PROJECT_NAME} main.cpp)
-#set(raylib_VERBOSE 1)
-target_link_libraries(${PROJECT_NAME} raylib)
+target_link_libraries(${PROJECT_NAME}
+PRIVATE
+raylib
+spdlog::spdlog
+)
 
 # Web Configurations
 if (${PLATFORM} STREQUAL "Web")
-    set_target_properties(${PROJECT_NAME} PROPERTIES SUFFIX ".html") # Tell Emscripten to build an example.html file.
-    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s USE_GLFW=3 -s ASSERTIONS=1 -s WASM=1 -s ASYNCIFY")
+set_target_properties(${PROJECT_NAME} PROPERTIES SUFFIX ".html")
+set(CMAKE_EXE_LINKER_FLAGS
+"${CMAKE_EXE_LINKER_FLAGS} -s USE_GLFW=3 -s ASSERTIONS=1 -s WASM=1 -s ASYNCIFY"
+)
 endif()
 
-# Checks if OSX and links appropriate frameworks (Only required on MacOS)
+# Checks if OSX and links appropriate frameworks
 if (APPLE)
-    target_link_libraries(${PROJECT_NAME} "-framework IOKit")
-    target_link_libraries(${PROJECT_NAME} "-framework Cocoa")
-    target_link_libraries(${PROJECT_NAME} "-framework OpenGL")
-    target_link_libraries(${PROJECT_NAME} "-framework QuartzCore")
+target_link_libraries(${PROJECT_NAME}
+PRIVATE
+"-framework IOKit"
+"-framework Cocoa"
+"-framework OpenGL"
+"-framework QuartzCore"
+)
 endif()
