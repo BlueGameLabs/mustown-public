@@ -58,7 +58,17 @@ add_executable(${PROJECT_NAME} main.cpp
         application/Application.h
         application/platform.h
         application/backends/RaylibPlatform.cpp
-        application/backends/RaylibPlatform.h)
+        application/backends/RaylibPlatform.h
+        scheduler/ScheduledTask.cpp
+        scheduler/ScheduledTask.h
+        scheduler/SchedulerConfig.cpp
+        scheduler/SchedulerConfig.h
+        scheduler/TaskQueue.cpp
+        scheduler/TaskQueue.h
+        scheduler/SchedulerModule.cpp
+        scheduler/SchedulerModule.h
+        scheduler/scheduler.cpp
+        scheduler/scheduler.h)
 
 target_link_libraries(${PROJECT_NAME}
 PRIVATE

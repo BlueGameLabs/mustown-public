@@ -1,0 +1,1 @@
+// SchedulerConfig consists of configuration value types.
