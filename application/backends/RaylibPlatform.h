@@ -1,15 +1,32 @@
-//
-// Created by HP on 11-10-2026.
-//
-
 #ifndef MUSTOWN_RAYLIBPLATFORM_H
 #define MUSTOWN_RAYLIBPLATFORM_H
 
-namespace application {
-    namespace backends {
-        class RaylibPlatform {
-        };
-    } // backends
-} // application
+#include "../Platform.h"
 
-#endif //MUSTOWN_RAYLIBPLATFORM_H
+namespace application::backends {
+
+    class RaylibPlatform final : public application::Platform {
+    public:
+        bool Initialize(
+            int width,
+            int height,
+            const char* title
+        ) override;
+
+        bool ShouldClose() const override;
+
+        float GetDeltaTime() const override;
+
+        void BeginFrame() override;
+
+        void EndFrame() override;
+
+        void Shutdown() override;
+
+    private:
+        bool initialized = false;
+    };
+
+} // namespace application::backends
+
+#endif // MUSTOWN_RAYLIBPLATFORM_H
