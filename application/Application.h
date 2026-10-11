@@ -2,7 +2,7 @@
 #define MUSTOWN_APPLICATION_H
 
 #include "../renderer/RenderDevice.h"
-#include "Platform.h"
+#include "platform.h"
 
 #include <memory>
 
