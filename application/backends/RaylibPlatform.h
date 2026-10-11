@@ -1,7 +1,7 @@
 #ifndef MUSTOWN_RAYLIBPLATFORM_H
 #define MUSTOWN_RAYLIBPLATFORM_H
 
-#include "../Platform.h"
+#include "../platform.h"
 
 namespace application::backends {
 
