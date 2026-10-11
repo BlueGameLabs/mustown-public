@@ -53,7 +53,12 @@ add_executable(${PROJECT_NAME} main.cpp
         renderer/animation/Animation.cpp
         renderer/animation/Animation.h
         renderer/animation/AnimationController.cpp
-        renderer/animation/AnimationController.h)
+        renderer/animation/AnimationController.h
+        application/Application.cpp
+        application/Application.h
+        application/platform.h
+        application/backends/RaylibPlatform.cpp
+        application/backends/RaylibPlatform.h)
 
 target_link_libraries(${PROJECT_NAME}
 PRIVATE
