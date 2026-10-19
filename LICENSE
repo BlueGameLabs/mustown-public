@@ -1,108 +1,17 @@
-# SOURCE CODE OWNERSHIP, CONFIDENTIALITY AND RESTRICTED-ACCESS LICENSE
+MIT License
 
-**Rights Holder:** Mr Debojyoti Ganguly
-**Project:** Mustown
-**Effective Date:** 10th October 2026
-**Applicable Law:** Indian Law, subject to mandatory legal requirements and conflict-of-law rules.
+Copyright (c) [year] [your name]
 
-## 1. Purpose and Application
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-This document accompanies and applies to the software source code, software builds, debug-symbol files, technical documentation, and related materials identified as part of the above project (collectively, the “Protected Materials”).
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-It is intended to accompany the Protected Materials wherever they are distributed, copied, transferred, or made accessible.
-
-This document does not require a handwritten signature to state the Rights Holder's conditions for authorized access and use. Where a contract or other legal obligation requires acceptance or another legal basis, that requirement remains applicable.
-
-## 2. Original Ownership
-
-Mr Debojyoti Ganguly is identified as the original owner of the project and all associated intellectual property rights that he lawfully owns.
-
-No purchase, payment, license fee, royalty, or transfer consideration is required under this document to recognize his existing ownership.
-
-Nothing in this document purports to transfer third-party intellectual property rights that Mr Ganguly does not own or have authority to license.
-
-## 3. Protected Materials
-
-Protected Materials include, to the extent owned by or lawfully controlled by Mr Ganguly:
-
-a. All source-code files, scripts, modules, libraries, project files, algorithms, and implementation materials.
-
-b. All compiled, executable, binary, intermediate, development, testing, staging, production, and archived builds.
-
-c. All builds containing debug symbols and related artifacts, including PDB files, DWARF information, symbol databases, source mappings, and diagnostic metadata.
-
-d. Build scripts, compiler configurations, deployment scripts, test suites, technical documentation, and project-specific development materials.
-
-e. Copies, extracts, modifications, and derivative materials to the extent they incorporate or reproduce the Protected Materials.
-
-## 4. Notice Accompanying Every Source File
-
-This document is intended to apply whenever any Protected Material is supplied, distributed, or made accessible, whether separately or together with other files.
-
-Any person who receives, downloads, opens, reads, accesses, copies, or uses a source file or other Protected Material is placed on notice that the material is subject to the ownership, confidentiality, and use restrictions stated here.
-
-Where applicable law recognizes acceptance through conduct or another legal basis for enforcement, the recipient's conduct and circumstances may be considered in determining whether the relevant obligations are enforceable.
-
-**The mere accidental or unknowing receipt of a file does not, by itself, guarantee that a binding contract has been formed.** Nothing in this document overrides mandatory legal requirements for notice, acceptance, or enforceability.
-
-## 5. Exclusive Authority to Authorize Access
-
-Mr Debojyoti Ganguly is the sole person authorized under this document to grant licenses or permission to access, use, distribute, or sublicense the Protected Materials that he owns or is legally entitled to license.
-
-No recipient acquires ownership or independent sublicensing authority merely by possessing a source file.
-
-Mr Ganguly may grant written or otherwise legally valid permission to individuals, developers, contractors, organizations, and other recipients, subject to applicable law and third-party rights.
-
-No recipient may further sublicense or redistribute the Protected Materials unless authorized by Mr Ganguly or otherwise permitted by applicable law.
-
-## 6. Confidentiality Obligations
-
-Recipients who are legally bound by these terms must:
-
-a. Protect all non-public source code, debug symbols, credentials, architecture, and technical documentation.
-
-b. Refrain from unauthorized disclosure, publication, sale, copying, or distribution.
-
-c. Not upload the Protected Materials to public repositories or unapproved third-party services without authorization.
-
-d. Use the Protected Materials only within the scope of an applicable license or other valid permission.
-
-e. Take reasonable security measures to prevent unauthorized access, copying, or loss.
-
-f. Promptly report suspected unauthorized disclosure or compromise to the Rights Holder where reasonably practicable.
-
-These obligations are subject to applicable law and any rights that cannot lawfully be restricted.
-
-## 7. Intellectual Property Restrictions
-
-Except to the extent authorized by a valid license or permitted by law, recipients may not claim ownership of the Protected Materials, remove ownership notices, or exploit the Rights Holder's intellectual property commercially.
-
-No implied ownership transfer or unrestricted license arises merely from delivery or possession of a source file.
-
-Third-party and open-source components remain subject to their respective licenses.
-
-## 8. Debug Symbols and Build Artifacts
-
-Debug-symbol-containing builds and associated artifacts are included in the Protected Materials when they form part of the project distribution.
-
-Their possession does not grant a recipient additional ownership rights. Access, modification, distribution, and commercial use remain subject to the applicable license and the lawful rights of the relevant owners.
-
-## 9. Termination and Continuing Protection
-
-Where an access license is validly terminated, the recipient must stop using the Protected Materials to the extent required by that license and return or destroy copies as legally required.
-
-Confidentiality obligations shall continue for the period specified by applicable law or a valid agreement. Trade secrets shall remain protected for as long as they qualify for protection under applicable law.
-
-## 10. Governing Law
-
-This document shall be interpreted under the laws of The Republic Of India, subject to applicable conflict-of-law rules and mandatory legal requirements.
-
-## 11. No Signature Requirement in the Document
-
-This document is intended to accompany the Protected Materials as a standing ownership, confidentiality, and license notice. It contains no signature block and does not require a handwritten signature as a condition of expressing the Rights Holder's terms.
-
-The absence of a signature does not dispense with any legal requirement for a valid contract, acceptance, or other basis of enforcement.
-
-**Rights Holder:** Mr Debojyoti Ganguly
-
-**End of License Notice**
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
